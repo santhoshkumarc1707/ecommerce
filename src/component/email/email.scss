@@ -1,0 +1,40 @@
+.email_continar {
+    h3 {
+        color: #102a42;
+        font-size: 32px;
+    }
+
+
+
+    p {
+        color: #588494;
+        line-height: 200%;
+    }
+
+    .email {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    button {
+        color: rgb(10, 9, 9);
+        background-color: #AB7A5F;
+        padding: 10px 20px;
+    }
+
+    button:hover {
+        color: white;
+        background-color: #eba985;
+        cursor: pointer;
+
+    }
+
+    input {
+        width: 60%;
+        padding: 10px;
+        border: 2px solid black;
+
+    }
+
+
+}

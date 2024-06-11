@@ -1,0 +1,122 @@
+.feature_container {
+    background-color: #F1F5F8;
+    width: 100%;
+    height: fit-content;
+
+    .feature_product {
+        .feature_img {
+            width: 363px;
+            height: 225px;
+            position: relative;
+
+            &:hover {
+                .overlay {
+                    display: block;
+                    cursor: pointer;
+                }
+
+                .find_icon {
+                    display: flex;
+
+                }
+            }
+
+            .overlay {
+                display: none;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.233);
+                z-index: 999;
+            }
+
+            .img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+
+            .find_icon {
+                display: none;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                top: 50%;
+                left: 50%;
+                right: 50%;
+                align-items: center;
+                justify-content: center;
+                background: #ab7a5f !important;
+                transform: translateX(-50%);
+
+                svg,
+                path {
+                    font-size: 20px;
+                    color: white;
+                }
+
+            }
+
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 32px;
+        padding-top: 5%;
+        color: #102A42;
+    }
+
+    span {
+        text-decoration: underline;
+        text-decoration-color: #ab7a5f;
+        text-decoration-thickness: 4px;
+        text-underline-offset: 15px;
+
+
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 3%;
+        padding: 10px;
+
+    }
+
+
+
+
+    footer {
+        position: relative;
+        top: -22px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        font-size: 20px;
+        color: #102A42;
+
+        h4 {
+            padding-left: 110px;
+            color: #D19B69;
+        }
+
+    }
+
+    button {
+        background-color: #AB7A5F;
+        cursor: pointer;
+        padding: 10px 25px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 45%;
+        margin-bottom: 7%;
+    }
+
+    button:hover {
+        color: rgb(10, 10, 10);
+        background-color: #f3d0be;
+    }
+}

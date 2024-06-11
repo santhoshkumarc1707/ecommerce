@@ -1,0 +1,69 @@
+.nav_cointainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    div {
+        margin-left: 4%;
+    }
+
+}
+
+.url_cointainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 60%;
+
+    li {
+        padding-left: 20px;
+        list-style-type: none;
+        list-style: none;
+
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #324d67;
+        font-size: 18px;
+
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-color: #ab7a5f;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 10px;
+    }
+}
+
+.card_cointainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 30%;
+
+    p {
+        font-size: 24px;
+        color: #153049;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    span {
+        position: relative;
+        top: 12px;
+        background-color: #ab7a5f;
+        width: fit-content;
+        height: 15px;
+        padding: 5px;
+        border-radius: 100%;
+
+    }
+
+
+
+}

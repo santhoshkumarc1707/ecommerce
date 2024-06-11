@@ -1,0 +1,65 @@
+.Design_continar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+
+    .design_content {
+        width: 50%;
+        margin-left: 5%;
+
+        h1 {
+            color: #102A42;
+            font-size: 3rem;
+        }
+
+        p {
+            color: #588494;
+            word-spacing: 5px;
+            line-height: 200%;
+            text-align: left;
+        }
+
+        button {
+            padding: 0.80rem 1.5rem;
+            background-color: #AB7A5F;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #ebc8b5;
+            color: black;
+            cursor: pointer;
+
+        }
+
+    }
+
+    .design_pic {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+
+        .img_2 {
+
+            position: absolute;
+            bottom: 4%;
+            transform: translateX(-52%);
+            
+            
+        }
+
+        .img_3 {
+            position: absolute;
+            border-radius: 3px;
+            width: 40px;
+            height: 380px;
+            background-color: #DECBC0;
+            margin-top: 130px;
+            transform: translateX(-100%);
+        }
+
+    }
+}
