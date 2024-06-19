@@ -1,14 +1,15 @@
 .custom_continar {
     background-color: #EADED7;
     width: 100%;
-    height: 450px;
-    margin-bottom: 10%;
+    height: 500px;
+    margin-bottom: 15%;
+
 
     .header_section {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 28px;
+        padding-bottom: 25px;
 
         h3 {
             color: #421a05;
@@ -26,31 +27,33 @@
     .services_continar {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 40px;
+        padding-left: 3%;
 
         .services {
-            width: 80%;
+
+            width: 83%;
+            height: 250px;
             text-align: center;
             background-color: #C5A491;
-            height: 250px;
-            padding: 50px 20px 20px 10px;
+            padding: 50px 20px 50px 10px;
 
             span {
 
-                width: 26px;
-                height: 26px;
+
                 background-color: #eaded7;
                 color: #453227;
-                padding: 20px;
+                padding: 25px 15px 15px 15px;
+                text-align: center;
                 border-radius: 100%;
-                justify-content: center;
-                align-items: center;
+
 
             }
 
             h5 {
                 color: #453227;
-                font-size: 16px;
-                font-weight: 100;
+                font-size: 24px;
+                font-weight: 500;
             }
 
             p {

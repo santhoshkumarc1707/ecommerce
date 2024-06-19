@@ -8,6 +8,8 @@
     .design_content {
         width: 50%;
         margin-left: 5%;
+        justify-content: center;
+        padding-top: 7%;
 
         h1 {
             color: #102A42;
@@ -22,15 +24,18 @@
         }
 
         button {
-            padding: 0.80rem 1.5rem;
+            padding: 15px 40px;
             background-color: #AB7A5F;
-            color: white;
+            color: wheat;
             border: none;
+            font-size: 18px;
+            border-radius: 5%;
+            transition: all 0.3s ease-in-out;
         }
 
         button:hover {
-            background-color: #ebc8b5;
-            color: black;
+            background-color: #ecb08f;
+            color: #361604;
             cursor: pointer;
 
         }
@@ -41,14 +46,17 @@
         width: 50%;
         display: flex;
         flex-direction: row;
+        padding-left: 16%;
+        padding-top: 2%;
+
 
         .img_2 {
 
             position: absolute;
-            bottom: 4%;
+            bottom: 0;
             transform: translateX(-52%);
-            
-            
+
+
         }
 
         .img_3 {
@@ -57,7 +65,7 @@
             width: 40px;
             height: 380px;
             background-color: #DECBC0;
-            margin-top: 130px;
+            margin-top: 120px;
             transform: translateX(-100%);
         }
 

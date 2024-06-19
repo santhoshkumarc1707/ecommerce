@@ -1,0 +1,38 @@
+.img_container {
+    border: none;
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+
+    .detail_container {
+        padding-left: 2%;
+
+        .btn {
+            width: 55px;
+            height: 25px;
+            background-color: #AB7A5F;
+            border: none;
+            color: white;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        h5 {
+            color: #102A42;
+            text-transform: capitalize;
+            font-size: larger;
+        }
+
+        h4 {
+            color: #C29679;
+        }
+
+        p {
+            color: #32557b;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 350px;
+        }
+    }
+}

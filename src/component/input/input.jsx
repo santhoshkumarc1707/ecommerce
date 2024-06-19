@@ -1,7 +1,7 @@
 
 
 // eslint-disable-next-line react/prop-types
-const Input = ({ label, name, value, type, onChange, className }) => {
+const Input = ({ label, name, value, type, onChange, className, ...otherProps }) => {
     return (
         <div>
             {label && <label htmlFor="">{label}</label>}
@@ -11,12 +11,8 @@ const Input = ({ label, name, value, type, onChange, className }) => {
                 name={name}
                 onChange={onChange}
                 className={className}
-
-
-
+                {...otherProps}
             />
-
-
         </div>
     )
 }

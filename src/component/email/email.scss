@@ -1,5 +1,9 @@
 .email_continar {
+
+    margin-bottom: 13%;
+
     h3 {
+        padding-left: 4%;
         color: #102a42;
         font-size: 32px;
     }
@@ -7,6 +11,7 @@
 
 
     p {
+        padding-left: 8%;
         color: #588494;
         line-height: 200%;
     }
@@ -20,6 +25,7 @@
         color: rgb(10, 9, 9);
         background-color: #AB7A5F;
         padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
     }
 
     button:hover {

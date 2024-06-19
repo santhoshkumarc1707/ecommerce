@@ -1,0 +1,27 @@
+.category_filters {
+    color: #102A42;
+
+    .label_content {
+        font-weight: bold;
+        padding-bottom: 20%;
+    }
+
+    .category_option {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+
+        .menus {
+            margin-top: 3px;
+            color: #7890A7;
+        }
+
+        .active {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-decoration-color:#7890A7;
+        }
+    }
+
+}

@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import './design.scss'
-
+import HeroImg from '../../assets/hero.jpeg'
 
 const Design = () => {
+    const navigate = useNavigate();
     const handleNavigate = () => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useNavigate('product')
+        navigate('product');
     }
     return (
         <div>
@@ -19,7 +19,7 @@ const Design = () => {
                 </div >
                 <div className='design_pic'>
                     <div className='img_3'></div>
-                    <img src="src/assets/hero.jpeg" alt="pic" width={250} height={165} className='img_2' />
+                    <img src={HeroImg} alt="pic" width={250} height={165} className='img_2' />
                     <img src="src/assets/aboutpic.jpeg" alt="ss" width={440} height={550} className='img_1' />
                 </div>
             </div>

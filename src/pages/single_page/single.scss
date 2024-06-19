@@ -1,0 +1,119 @@
+.single_container {
+    .btn {
+        border: none;
+        background-color: #AB7A5F;
+        color: rgb(238, 221, 221);
+        margin-left: 2%;
+        font-size: 16px;
+        width: 210px;
+        padding: 5px 20px;
+
+        &:hover {
+            color: black;
+            background-color: #ebb99e;
+        }
+    }
+
+    .button_compound {
+        background-color: #AB7A5F;
+        border: none;
+        padding: 10px 20px;
+        color: rgb(252, 252, 252);
+        margin-left: 6%;
+
+        &:hover {
+            color: black;
+            background-color: #ebb99e;
+        }
+    }
+
+
+    .single_content {
+        display: flex;
+        flex-direction: row;
+
+        .image_container {
+            width: 50%;
+            padding-left: 6%;
+
+            .img {
+                width: 553px;
+                height: 500px;
+            }
+
+            .sub_image_container {
+                margin-bottom: 10%;
+
+            }
+
+            .smallimg {
+                margin: 1%;
+            }
+
+        }
+
+        .img {
+            width: 60%;
+            height: 500px;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+
+        .details_container {
+            width: 50%;
+
+            h4 {
+                font-size: 32px;
+                text-transform: capitalize;
+                color: #102a42;
+            }
+
+            p {
+                color: #164368;
+                line-height: 1.6;
+                width: 85%;
+            }
+
+            label {
+                margin-right: 10%;
+            }
+
+
+
+
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                width: 20%;
+
+
+                span {
+                    background-color: transparent;
+                    font-size: 28px;
+                    cursor: pointer;
+                    margin: 20%;
+
+                }
+
+                p {
+                    border: 1px solid white;
+                    padding: 2px 20px 20px 20px;
+                    font-size: 24px;
+                }
+            }
+
+        }
+
+        .color_btn {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            border: none;
+            margin: 1%;
+            opacity: 0.6;
+        }
+    }
+
+
+}

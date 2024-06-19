@@ -3,7 +3,11 @@
     width: 100%;
     height: fit-content;
 
+
+
     .feature_product {
+        padding-left: 5%;
+
         .feature_img {
             width: 363px;
             height: 225px;
@@ -49,6 +53,7 @@
                 justify-content: center;
                 background: #ab7a5f !important;
                 transform: translateX(-50%);
+                transition: all 0.3s ease-in-out;
 
                 svg,
                 path {
@@ -113,6 +118,7 @@
         border-radius: 5px;
         margin-left: 45%;
         margin-bottom: 7%;
+        transition: all 0.3s ease-in-out;
     }
 
     button:hover {
