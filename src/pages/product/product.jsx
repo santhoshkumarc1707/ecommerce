@@ -126,10 +126,10 @@ const Product = () => {
                             <div className="showtype_btn">
                                 <div className="span">
 
-                                    <span onClick={() => setView("grid")} >
+                                    <span onClick={() => setView("grid")} className={view === "grid" ? "fill" : ""} >
                                         <GridIcon />
                                     </span>
-                                    <span onClick={() => setView("list")}>
+                                    <span onClick={() => setView("list")} className={view === "list" ? "fill" : ""}>
                                         <ListIcon />
                                     </span>
                                 </div>
