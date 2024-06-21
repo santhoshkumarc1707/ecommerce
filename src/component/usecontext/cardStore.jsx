@@ -11,7 +11,6 @@ export const CartProvider = ({ children }) => {
     const addToCart = useCallback((item, quantity = 1) => {
         setCartItems((prevCartItems) => {
             const isItemInCart = prevCartItems.find((cartItem) => cartItem.id === item.id);
-
             if (isItemInCart) {
                 return prevCartItems.map((cartItem) =>
                     cartItem.id === item.id
@@ -19,7 +18,7 @@ export const CartProvider = ({ children }) => {
                         : cartItem
                 );
             } else {
-                return [...prevCartItems, { ...item, quantity }];
+                return [...prevCartItems, { ...item }];
             }
         });
     }, []);

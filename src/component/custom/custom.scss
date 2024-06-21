@@ -23,7 +23,6 @@
 
         }
     }
-
     .services_continar {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -61,8 +60,49 @@
                 line-height: 200%;
 
             }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .custom_continar {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 25%;
+
+        .header_section {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+
+            p {
+
+                line-height: 150%;
+                margin: 2% 10% 2% 10%;
+
+            }
+        }
+        .services_continar {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+
+            .services {
+                width: 90%;
+                height: 180px;
+                margin-bottom: 10%;
+
+
+                p {
+                    color: #453227;
+                    line-height: 110%;
+
+                }
+
+            }
 
         }
+
+
     }
 
 }

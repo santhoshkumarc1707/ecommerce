@@ -41,7 +41,7 @@ const Range = ({ product = [], handleFilterChange = () => { } }) => {
     };
     return (
         <div className="range_continar">
-            <label className="label_content">price</label>
+            <h3 className="label_content">price</h3>
             <p>{formatPrice(value)}</p>
             <Input
                 type="range"

@@ -35,4 +35,25 @@
             max-width: 350px;
         }
     }
+
+    img {
+        width: 363px;
+        height: 225px;
+        object-fit: cover;
+    }
+}
+
+
+@media(max-width:768px) {
+    .img_container {
+
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 300px;
+            object-fit: cover;
+        }
+    }
+
 }

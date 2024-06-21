@@ -1,13 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
-import { CartContext } from '../../component/usecontext/cardStore';
-import Button from '../../component/button/button'
+import { CartContext } from '../../component/usecontext/cardStore'
+import Button from '../../component/button/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { Delete } from '../../images/icons/delete';
-import './cart.scss';
 import { Spinner } from '../../images/icons/spinner';
+import { Formatprice } from '../../component/fomatprice/formatprice';
+import './cart.scss';
+
 const Cart = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -17,10 +20,14 @@ const Cart = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const { cartItems, addToCart, deleteFromCart, removeFromCart, getCartTotal, clearCart } = useContext(CartContext);
-    const handleDelet = (item) => {
-        deleteFromCart(item);
-    }
+
+    const { cartItems, addToCart, deleteFromCart, removeFromCart, getCartTotal, clearCart } = useContext(CartContext)
+
+
+    const getCartTotalWithShipping = () => {
+        return getCartTotal() + 534;
+    };
+
     return (
         <div>
             {isLoading ? <Spinner /> : (
@@ -28,58 +35,59 @@ const Cart = () => {
                     {cartItems.length > 0 ? (
                         <>
                             <div className='head_continar'>
-                                <h3><Link to="/">Home</Link> /Cart</h3>
+                                <h3><Link to="/">Home</Link>/ Cart </h3>
                             </div>
-                            <div className='header_content' >
+                            <div className='header_content'>
                                 <h5>Item</h5>
                                 <h5>Price</h5>
                                 <h5>Quantity</h5>
                                 <h5>Subtotal</h5>
-                                <h5>Delete</h5>
                             </div>
                             <hr className='hr_tag' />
-                            {cartItems.map((curr, idx) =>
+                            {cartItems?.map((curr, idx) => (
                                 <div key={idx} className='cart_container'>
-                                    <div className='img_cart_container' >
-                                        <img src={curr?.images?.[0].url} width={100} height={75} />
+                                    <div className='img_cart_container'>
+                                        <img src={curr?.images[0].url} width={100} height={75} alt={curr.name} />
                                         <div>
                                             <p>{curr.name}</p>
-                                            <span>color:<button style={{ background: curr.selectedColor }} className='color_btn'></button></span>
+                                            <span>Color: <button style={{ background: curr.selectedColor }} className='color_btn'></button></span>
                                         </div>
                                     </div>
-                                    <p className='price_cointainer'> {curr.price}</p>
-                                    <div className='card_toggle'>
-                                        <Button onClick={() => removeFromCart(curr)}>-</Button>
+                                    <h3 className='price_container'>{Formatprice(curr.price)}</h3>
+                                    <div className='cart_toggle'>
+                                        <Button onClick={() => removeFromCart(curr)} disabled={curr.quantity === 1}>-</Button>
                                         <p>{curr.quantity}</p>
-                                        <Button onClick={() => addToCart(curr)}>+  </Button>
+                                        <Button onClick={() => addToCart(curr)} disabled={curr.quantity === curr.stock}>+</Button>
                                     </div>
                                     <div className='sub_total'>
-                                        <p>${curr.total}</p>
+                                        <p>{Formatprice(curr.total)}</p>
                                     </div>
-
-                                    <div onClick={() => handleDelet(curr)} className='delet_container'>
+                                    <div onClick={() => deleteFromCart(curr)} className='delete_container'>
                                         <Delete />
                                     </div>
-                                </div>)}
+                                </div>
+                            ))}
                             <hr className='hr_tag' />
-                            <Button onClick={() => navigate('/product')} className='continue_btn'  >Continue Shopping</Button>
-                            <Button onClick={() => clearCart()} className='shop_btn' >clear a shopping card</Button>
+                            <Button onClick={() => navigate('/product')} className='continue_btn'>Continue Shopping</Button>
+                            <Button onClick={() => clearCart()} className='shop_btn'>Clear Shopping Cart</Button>
                             <div className='total_container'>
-                                <h3>Subtotal :${getCartTotal()}</h3>
-                                <h3>Shipping Fee :  $5.34</h3>
+                                <h3>Subtotal: <span> {Formatprice(getCartTotal())}</span></h3>
+                                <h4>Shipping Fee: <span> $5.34</span></h4>
                                 <hr />
-                                <h2>Order Total:${getCartTotal()}</h2>
+                                <h2>Order Total:<span> {Formatprice(getCartTotalWithShipping())}</span></h2>
                             </div>
-                            <Button className="signin_button">sign_in</Button>
-                        </>) : (
+                            <Button className="signin_button">Sign In</Button>
+                        </>
+                    ) : (
                         <div className='fill_tag'>
-                            <h1 >your card is empty </h1>
-                            <Button onClick={() => navigate('/product')}  >FILL IT</Button>
+                            <h1>Your cart is empty</h1>
+                            <Button onClick={() => navigate('/product')}>FILL IT</Button>
                         </div>
                     )}
-                </>)}
+                </>
+            )}
         </div>
-    )
+    );
 }
 
-export default Cart
+export default Cart;

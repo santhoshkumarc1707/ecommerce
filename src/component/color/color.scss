@@ -1,5 +1,11 @@
 .color_container {
     margin-top: 6%;
+    width: 210px;
+
+    p {
+        color: #102A42;
+        font-weight: 700;
+    }
 
     .color_btn {
         border: none;
@@ -11,27 +17,21 @@
         opacity: 0.6;
         margin: 2px;
 
-        .color_btn span {
-            display: none;
+
+        label {
+            color: aquamarine;
+
         }
 
-        .label_content {
-            color: #102A42;
-            font-weight: bold;
-        }
-
-        .color_contant {
+        .color_content {
             display: flex;
             flex-direction: column;
-        }
-
-        .active {
-            display: inline;
         }
 
     }
 
     .color_component {
         margin-top: 10px;
+
     }
 }

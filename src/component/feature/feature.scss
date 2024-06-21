@@ -3,8 +3,6 @@
     width: 100%;
     height: fit-content;
 
-
-
     .feature_product {
         padding-left: 5%;
 
@@ -90,21 +88,30 @@
 
     }
 
+    @media (max-width: 768px) {
+        .feature {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
 
+        }
+    }
 
+    .bottom_content {
 
-    footer {
-        position: relative;
-        top: -22px;
         display: flex;
         flex-direction: row;
-        margin-left: 20px;
-        font-size: 20px;
-        color: #102A42;
+        justify-content: space-between;
+        width: 363px;
+        font-size: 18px;
+
+        h5 {
+            font-weight: 500;
+            color: #102A42;
+        }
 
         h4 {
-            padding-left: 110px;
-            color: #D19B69;
+            color: #B67C64;
+            font-weight: 400;
         }
 
     }
@@ -119,10 +126,19 @@
         margin-left: 45%;
         margin-bottom: 7%;
         transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: rgb(10, 10, 10);
+            background-color: #f3d0be;
+        }
     }
 
-    button:hover {
-        color: rgb(10, 10, 10);
-        background-color: #f3d0be;
+
+    @media (max-width: 768px) {
+        button {
+            margin-left: 38%;
+
+        }
+
     }
 }

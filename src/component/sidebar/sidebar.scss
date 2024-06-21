@@ -1,15 +1,27 @@
-
 .shipping_container {
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     .ship_content {
         color: #102A42;
 
-
         .check_box {
-            margin-left: 60px;
+            margin-left: 80px;
         }
     }
+}
+
+.flt_btn {
+    background-color: #BB2525;
+    color: white;
+    border: none;
+    padding: 4px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
 }

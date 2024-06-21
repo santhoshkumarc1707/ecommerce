@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './product.scss';
 import Sidebar from '../../component/sidebar/sidebar';
 import List from '../../products/list_view/list';
@@ -14,7 +14,8 @@ const Product = () => {
         company: "",
         colors: "",
         shipping: false,
-        price: null
+        price: null,
+        sorting: "price-low-high"
     };
 
     const [view, setView] = useState('grid');
@@ -44,12 +45,6 @@ const Product = () => {
         getAPIData();
     }, [getAPIData]);
 
-    useEffect(() => {
-        const list = product.map((curr) => curr.company);
-        const sortedList = [...new Set(list)];
-        console.log(["all", ...sortedList]);
-    }, [product]);
-
     const handleChange = (e) => {
         const { value } = e.target;
         handleFilterChange("sorting", value);
@@ -60,7 +55,7 @@ const Product = () => {
     };
 
     useEffect(() => {
-        const { search, category, company, colors, shipping, price } = filters;
+        const { search, category, company, colors, shipping, price, sorting } = filters;
         let filteredData = product;
 
         if (search) {
@@ -82,19 +77,18 @@ const Product = () => {
             filteredData = filteredData.filter(curr => curr.price <= Number(price));
         }
 
-        
         filteredData.sort((a, b) => {
-            if (filters.sorting === 'price-low-high') {
+            if (sorting === 'price-high-low') {
                 return a.price - b.price;
             }
-            if (filters.sorting === 'price-high-low') {
+            if (sorting === 'price-low-high') {
                 return b.price - a.price;
             }
-            if (filters.sorting === 'name-z-a') {
-                return a.name.localeCompare(b.name);
-            }
-            if (filters.sorting === 'name-a-z') {
+            if (sorting === 'name-a-z') {
                 return b.name.localeCompare(a.name);
+            }
+            if (sorting === 'name-z-a') {
+                return a.name.localeCompare(b.name);
             }
             return 0;
         });
@@ -114,9 +108,7 @@ const Product = () => {
         </svg>
     );
 
-    const handleRestart = () => {
-        setFilters(listitems);
-    };
+
 
     return (
         <div>
@@ -127,26 +119,29 @@ const Product = () => {
                     </div>
                     <div className='product_container'>
                         <div className='sidebar_container'>
-                            <Sidebar handleFilterChange={handleFilterChange} search={filters.search} product={product} />
-                            <button onClick={handleRestart} className='flt_btn'>Clear Filters</button>
+                            <Sidebar handleFilterChange={handleFilterChange} search={filters.search} product={product} setFilters={setFilters} listitems={listitems} />
                         </div>
+                        <Outlet />
                         <div className='gridview_container'>
                             <div className="showtype_btn">
-                                <span onClick={() => setView("grid")}>
-                                    <GridIcon />
-                                </span>
-                                <span onClick={() => setView("list")}>
-                                    <ListIcon />
-                                </span>
-                                <hr />
+                                <div className="span">
+
+                                    <span onClick={() => setView("grid")} >
+                                        <GridIcon />
+                                    </span>
+                                    <span onClick={() => setView("list")}>
+                                        <ListIcon />
+                                    </span>
+                                </div>
+                                <p className='filter_count' >{filteredProduct.length} Products Found</p>
+                                <hr className='hr_tag' />
                                 <h3>Sort By</h3>
-                                <select name="sorting" onChange={handleChange} className='price_sort'>
-                                    <option value="price-low-high">Price (Low to High)</option>
-                                    <option value="price-high-low">Price (High to Low)</option>
+                                <select name="sorting" onChange={handleChange} className='price_sort' value={filters.sorting}>
+                                    <option value="price-low-high">Price(High to Low)</option>
+                                    <option value="price-high-low">Price (Low to High)</option>
                                     <option value="name-a-z">Name (A-Z)</option>
                                     <option value="name-z-a">Name (Z-A)</option>
                                 </select>
-
                             </div>
                             {view === "grid" ? <Grid product={filteredProduct} /> : <List product={filteredProduct} />}
                         </div>

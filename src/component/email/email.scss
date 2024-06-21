@@ -21,6 +21,22 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    @media (max-width: 768px) {
+        .email {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+
+        }
+        p{
+            padding-left: 9%; 
+        }
+        h3 {
+            padding-left: 6%;
+            font-size: 26px;
+        }
+
+    }
+
     button {
         color: rgb(10, 9, 9);
         background-color: #AB7A5F;

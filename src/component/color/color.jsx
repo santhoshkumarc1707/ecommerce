@@ -21,7 +21,7 @@ const Color = ({ handleFilterChange = () => { }, product = [] }) => {
 
     return (
         <div className='color_container'>
-            <label className='label_content'>Colors</label>
+            <p>Colors</p>
             <div className='color_component'>
                 {
                     colories?.map((curr, idx) =>
@@ -32,7 +32,7 @@ const Color = ({ handleFilterChange = () => { }, product = [] }) => {
                             value={curr}
                             onClick={handleClick}
                         >
-                            {curr === "all" ? "all" : null}
+                            {curr === "all" ? "All" : null}
                             {active === curr && <Correct />}
                         </button>
                     )

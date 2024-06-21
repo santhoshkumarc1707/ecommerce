@@ -1,16 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import './grid.scss'
+import { Formatprice } from "../../component/fomatprice/formatprice";
 
 // eslint-disable-next-line react/prop-types
 const Grid = ({ product = [] }) => {
     const navigate = useNavigate()
-    const formatPrice = (price) => {
-        const priceStr = price.toFixed(2).replace('.', '');
-        const length = priceStr.length;
-        const formattedPrice = `$${priceStr.substring(0, length - 6)},${priceStr.substring(length - 6, length - 4)}.${priceStr.substring(length - 4, length - 2)}`;
-        return formattedPrice;
-    };
-
+   
     return (
         <div className="pic_container">
             {product?.map((curr, idx) =>
@@ -24,7 +19,7 @@ const Grid = ({ product = [] }) => {
                 </div>
                 <div className="footer_container">
                     <h5>{curr.name}</h5>
-                    <p>{formatPrice(curr.price)}</p>
+                    <p>{Formatprice(curr.price)}</p>
 
                 </div>
             </div>))

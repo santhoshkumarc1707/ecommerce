@@ -71,3 +71,40 @@
 
     }
 }
+
+@media (max-width: 768px) {
+    .Design_continar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 20px;
+
+        .design_content {
+            width: 100%;
+
+            h1 {
+
+                font-size: 3rem;
+                width: 350px;
+            }
+
+            p {
+                word-spacing: 0.2px;
+                line-height: 120%;
+                text-align: center;
+                width: 230px;
+                margin-left: 2%;
+            }
+
+            button {
+                padding: 7px 15px;
+
+            }
+        }
+
+        .design_pic {
+            display: none;
+        }
+    }
+}

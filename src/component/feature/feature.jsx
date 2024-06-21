@@ -11,8 +11,8 @@ const Feature = () => {
     }
     const featured = [
         { "img": "src/assets/product-7.jpeg", "center": "Entertainment Center", "price": "$599.99", id: "recNZ0koOqEmilmoz" },
-        { "img": "src/assets/product-11.jpeg", "center": "High-Back Bench", "price": "$333.99", id: "recrfxv3EwpvJwvjq" },
-        { "img": "src/assets/product-8.jpeg", "center": "Modern Bookshelf", "price": "$319.99", id: "recoAJYUCuEKxcPSr" },
+        { "img": "src/assets/product-11.jpeg", "center": "High-Back Bench", "price": "$333.99", id: "recoAJYUCuEKxcPSr" },
+        { "img": "src/assets/product-8.jpeg", "center": "Modern Bookshelf", "price": "$319.99", id: "recrfxv3EwpvJwvjq" },
     ]
     return (
         <div>
@@ -32,21 +32,17 @@ const Feature = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <footer>
+                                    <div className="bottom_content">
                                         <h5>{curr.center}</h5>
                                         <h4>{curr.price}</h4>
-                                    </footer>
+                                    </div>
                                 </div>
-
                             ))
                         }
                     </div>
                 </Container>
-
-                <button onClick={handleNavigate}>ALL PRODUCTS</button>
+                <button onClick={() => navigate('/product')}>ALL PRODUCTS</button>
             </div>
-
-
         </div>
     )
 }

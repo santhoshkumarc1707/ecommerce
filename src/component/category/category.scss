@@ -9,19 +9,25 @@
     .category_option {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 7px;
+        text-transform: capitalize;
+        white-space: nowrap;
+
 
 
         .menus {
             margin-top: 3px;
             color: #7890A7;
+            font-size: 15px;
+            font-weight: 400;
         }
 
         .active {
             text-decoration: underline;
             text-underline-offset: 5px;
-            text-decoration-color:#7890A7;
+            text-decoration-color: #7890A7;
         }
+
     }
 
 }
