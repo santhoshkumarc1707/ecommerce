@@ -13,7 +13,8 @@
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         width: 100%;
-      
+
+
     }
 }
 
@@ -21,6 +22,9 @@
     position: relative;
     width: 299px;
     height: 175px;
+    transition: all 10s ease-in-out;
+
+
 
     &:hover {
         cursor: pointer;
@@ -43,6 +47,8 @@
         width: 99.9%;
         height: 99.9%;
         z-index: 999;
+
+
     }
 
     .img {

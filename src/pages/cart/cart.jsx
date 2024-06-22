@@ -27,7 +27,7 @@ const Cart = () => {
     const getCartTotalWithShipping = () => {
         return getCartTotal() + 534;
     };
-
+    console.log(cartItems.quantity);
     return (
         <div>
             {isLoading ? <Spinner /> : (
@@ -57,6 +57,7 @@ const Cart = () => {
                                     <div className='cart_toggle'>
                                         <Button onClick={() => removeFromCart(curr)} disabled={curr.quantity === 1}>-</Button>
                                         <p>{curr.quantity}</p>
+                                       
                                         <Button onClick={() => addToCart(curr)} disabled={curr.quantity === curr.stock}>+</Button>
                                     </div>
                                     <div className='sub_total'>
