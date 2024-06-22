@@ -27,7 +27,7 @@ const Cart = () => {
     const getCartTotalWithShipping = () => {
         return getCartTotal() + 534;
     };
-    console.log(cartItems.quantity);
+    console.log(cartItems.selectedColor);
     return (
         <div>
             {isLoading ? <Spinner /> : (
@@ -52,12 +52,13 @@ const Cart = () => {
                                             <p>{curr.name}</p>
                                             <span>Color: <button style={{ background: curr.selectedColor }} className='color_btn'></button></span>
                                         </div>
+
                                     </div>
                                     <h3 className='price_container'>{Formatprice(curr.price)}</h3>
                                     <div className='cart_toggle'>
                                         <Button onClick={() => removeFromCart(curr)} disabled={curr.quantity === 1}>-</Button>
                                         <p>{curr.quantity}</p>
-                                       
+
                                         <Button onClick={() => addToCart(curr)} disabled={curr.quantity === curr.stock}>+</Button>
                                     </div>
                                     <div className='sub_total'>

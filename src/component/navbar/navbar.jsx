@@ -24,7 +24,7 @@ const Navbar = () => {
 
                 </div>
                 <div className="card_container">
-                    <p>Cart</p>
+                    <Link to={'/cart'} ><p>Cart</p></Link>
                     <Link to={'/cart'}><p><FontAwesomeIcon icon={faCartShopping} /></p></Link>
                     <span>{items}</span>
                     <p>login &nbsp; <Login /></p>

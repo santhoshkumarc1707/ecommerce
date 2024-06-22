@@ -79,7 +79,7 @@ const Single = () => {
         const cartData = { ...data, selectedColor: active, count: counter, total: counter * data?.price, quantity: counter };
         addToCart(cartData);
         navigate('/cart');
-        console.log(cartData);
+       
     }
     const handleChangeImage = (src, key) => {
         setSelectedImg(src);
