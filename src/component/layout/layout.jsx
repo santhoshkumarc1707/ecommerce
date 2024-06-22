@@ -10,12 +10,11 @@ import { CartContext } from "../usecontext/cardStore"
 
 
 const Layout = () => {
-    const [menu, SetMenu] = useState('false')
-    
+    const [menu, SetMenu] = useState(false);
+
     const handlemenu = () => {
         SetMenu((pre) => !pre)
     }
-   
 
     const { cartItems } = useContext(CartContext);
     return (
@@ -23,10 +22,10 @@ const Layout = () => {
             <div>
                 <Navbar />
             </div>
-            
+
             <div className={`min_menu  ${menu ? 'view' : ""} `}>
                 <div className="mini_navmain_continer">
-                   
+
                     <div className="mini_menu_container">
                         <ul>
                             <li><Link to='/'>Home</Link></li>

@@ -17,7 +17,7 @@ const List = ({ product = [] }) => {
                     <div key={idx}>
                         <div className="img_container">
                             <div>
-                                <img src={curr.image} alt={curr.name}  />
+                                <img src={curr.image} alt={curr.name} />
                             </div>
                             <div className="detail_container">
                                 <h5>{curr.name}</h5>

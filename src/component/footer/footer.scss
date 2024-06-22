@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
 
+
     span {
         color: #ab7a5f;
     }
@@ -17,6 +18,8 @@
 
 @media (max-width: 768px) {
     .footer_continar {
-        width: 108%
+        display: none;
+
+
     }
 }
