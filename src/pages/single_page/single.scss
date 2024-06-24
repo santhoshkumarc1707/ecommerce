@@ -77,7 +77,8 @@
                 position: relative;
                 bottom: 5%;
                 color: #AB7C79;
-                font-weight: normal;
+                font-weight: 500;
+
             }
 
             h4 {
@@ -95,6 +96,8 @@
                 color: #164368;
                 line-height: 2;
                 width: 85%;
+                position: relative;
+                bottom: 5%;
 
             }
 
@@ -102,6 +105,10 @@
                 color: #164368;
                 text-transform: capitalize;
                 font-weight: normal;
+
+                span {
+                    margin-left: 8%;
+                }
             }
 
             label {
@@ -117,15 +124,18 @@
             margin-left: 0%;
 
         }
+    }
 
-        .color_btn {
-            margin: 1%;
+    .color_div {
+        max-width: 1170px;
+        height: auto;
+
+        .color_button {
             width: 20px;
+            margin: 10px;
             height: 20px;
             border-radius: 100%;
             border: none;
-            opacity: 0.6;
-            cursor: pointer;
 
         }
     }
@@ -152,7 +162,7 @@
 
             .details_container {
                 text-align: center;
-               
+
 
                 h4 {
                     font-size: 28px;

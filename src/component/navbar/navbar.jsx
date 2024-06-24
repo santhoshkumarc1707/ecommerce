@@ -5,10 +5,11 @@ import { Login } from '../../images/icons/login'
 import { CartContext } from '../usecontext/cardStore'
 import { useContext } from "react"
 import './navbar.scss'
-
 const Navbar = () => {
-    const { cartItems } = useContext(CartContext);
-    const items = cartItems.length;
+    const { cartCount } = useContext(CartContext);
+    const items = cartCount;
+    
+
     return (
         <div>
             <div className="navmain_continer">
@@ -32,9 +33,6 @@ const Navbar = () => {
                 </div>
 
             </div>
-
-
-
         </div>
     )
 }

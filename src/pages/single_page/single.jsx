@@ -11,7 +11,7 @@ import { Spinner } from '../../images/icons/spinner';
 import { Formatprice } from '../../component/fomatprice/formatprice';
 
 const Single = () => {
-    const { addToCart } = useContext(CartContext);
+    const { addToCart, setCartCount = () => { } } = useContext(CartContext);
     const [data, setData] = useState(null);
     const [counter, setCounter] = useState(1);
     const [active, setActive] = useState(null);
@@ -20,6 +20,8 @@ const Single = () => {
     const navigate = useNavigate();
     const [selectedImg, setSelectedImg] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -76,10 +78,12 @@ const Single = () => {
     }
 
     const handleCart = () => {
-        const cartData = { ...data, selectedColor: active, count: counter, total: counter * data?.price, quantity: counter };
+        setCartCount((pre) => pre + counter);
+        const cartData = { ...data, setselectedColor: active, count: counter, total: counter * data?.price, quantity: counter };
         addToCart(cartData);
         navigate('/cart');
-       
+
+
     }
     const handleChangeImage = (src, key) => {
         setSelectedImg(src);
@@ -116,27 +120,30 @@ const Single = () => {
                                 <span>{renderStars(data?.stars)} ({data?.reviews} customer reviews) </span>
                                 <h2>{Formatprice(data?.price)}</h2>
                                 <p>{data?.description}</p>
-                                <p>Available: {data?.stock ? "In stock" : "Out of stock"}</p>
-                                <h3>SKU: {data?.id}</h3>
-                                <p>Brand: {data?.company}</p>
+                                <h3>Available:<span>{data?.stock ? "In stock" : "Out of stock"}</span></h3>
+                                <h3>SKU:&emsp;&emsp; &nbsp;<span>{data?.id}</span></h3>
+                                <h3>Brand:&emsp; &nbsp; <span>{data?.company}</span></h3>
                                 <hr className='hr_tag' />
                                 {data?.stock ? (
                                     <>
                                         <label>Colors:</label>
-                                        {data?.colors?.map((color, idx) => (
-                                            <button
-                                                key={idx}
-                                                className={`color_btn ${active === color ? "active" : ""}`}
-                                                style={{ background: color }}
-                                                onClick={() => handleClick(color)}
-                                            >
-                                                {active === color && <Correct />}
-                                            </button>
-                                        ))}
+                                        <div className='color_div'>
+                                            {data?.colors?.map((color, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    className={`color_button ${active === color ? "active" : ""}`}
+                                                    style={{ background: color }}
+                                                    onClick={() => handleClick(color)}
+                                                >
+                                                    {active === color && <Correct />}
+                                                </button>
+                                            ))}
+                                        </div>
                                         <div className='quantity_container'>
                                             <button onClick={decrement} >-</button>
                                             <span>{counter}</span>
                                             <button onClick={increment} >+</button>
+
                                         </div>
                                         <button onClick={handleCart} className='cart_btn'>Add to cart</button>
                                     </>

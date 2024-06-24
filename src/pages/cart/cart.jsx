@@ -10,7 +10,13 @@ import './cart.scss';
 const Cart = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
-
+    const { cartItems,
+        addToCart,
+        deleteFromCart,
+        removeFromCart,
+        getCartTotal,
+        clearCart,
+        setCartCount = () => { } } = useContext(CartContext);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -21,13 +27,11 @@ const Cart = () => {
     }, []);
 
 
-    const { cartItems, addToCart, deleteFromCart, removeFromCart, getCartTotal, clearCart } = useContext(CartContext)
-
 
     const getCartTotalWithShipping = () => {
         return getCartTotal() + 534;
     };
-    console.log(cartItems.selectedColor);
+
     return (
         <div>
             {isLoading ? <Spinner /> : (
@@ -50,16 +54,16 @@ const Cart = () => {
                                         <img src={curr?.images[0].url} width={100} height={75} alt={curr.name} />
                                         <div>
                                             <p>{curr.name}</p>
-                                            <span>Color: <button style={{ background: curr.selectedColor }} className='color_btn'></button></span>
+                                            <span>Color:<button style={{ background: curr.selectedColor }} className='color_btn'></button></span>
                                         </div>
 
                                     </div>
                                     <h3 className='price_container'>{Formatprice(curr.price)}</h3>
                                     <div className='cart_toggle'>
-                                        <Button onClick={() => removeFromCart(curr)} disabled={curr.quantity === 1}>-</Button>
+                                        <Button onClick={() => { removeFromCart(curr); setCartCount(pre => pre - 1) }} disabled={curr.quantity === 1}>-</Button>
                                         <p>{curr.quantity}</p>
 
-                                        <Button onClick={() => addToCart(curr)} disabled={curr.quantity === curr.stock}>+</Button>
+                                        <Button onClick={() => { addToCart(curr); setCartCount(pre => pre + 1) }} disabled={curr.quantity === curr.stock}>+</Button>
                                     </div>
                                     <div className='sub_total'>
                                         <p>{Formatprice(curr.total)}</p>
